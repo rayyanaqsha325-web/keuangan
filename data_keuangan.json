@@ -1,0 +1,17 @@
+[
+    {
+        "jenis": "pemasukan",
+        "jumlah": 8400000,
+        "keterangan": "Beasiswa"
+    },
+    {
+        "jenis": "pengeluaran",
+        "jumlah": 250000,
+        "keterangan": "Beli charger"
+    },
+    {
+        "jenis": "pengeluaran",
+        "jumlah": 100000,
+        "keterangan": "Jalan-jalan"
+    }
+]
