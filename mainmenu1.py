@@ -1,12 +1,19 @@
 # main.py
 from transaksi import Transaksi, menu, format_rupiah
+from reminder import Reminder
+from budget import BudgetPlanner
+from laporan import LaporanBulanan
+
 
 def main():
     catatan = Transaksi()
+    reminder = Reminder()
+    planner = BudgetPlanner()
+    laporan = LaporanBulanan()
 
     while True:
         menu()
-        pilihan = input("Pilih menu (1-7): ")
+        pilihan = input("Pilih menu (1-10): ")
 
         if pilihan == "1":
             jenis = input("Masukkan jenis (pemasukan/pengeluaran): ").lower()
@@ -49,9 +56,58 @@ def main():
             else:
                 print("Jenis tidak valid, pilih 'pemasukan' atau 'pengeluaran'.")
 
+        elif pilihan == "8":
+            print("\n=== Menu Pengingat Tagihan ===")
+            print("1. Tambah Tagihan Baru")
+            print("2. Lihat Tagihan yang Akan Jatuh Tempo")
+            print("3. Hapus Tagihan")
+            sub = input("Pilih opsi (1/2/3): ")
+
+            if sub == "1":
+                nama = input("Masukkan nama tagihan (misal: Listrik, Internet): ")
+                jatuh_tempo = input("Masukkan tanggal jatuh tempo (format: DD-MM-YYYY): ")
+                try:
+                    jumlah = int(input("Masukkan jumlah tagihan (Rp): "))
+                except ValueError:
+                    print("Jumlah harus berupa angka!")
+                else:
+                    reminder.tambah_tagihan(nama, jatuh_tempo, jumlah)
+
+            elif sub == "2":
+                reminder.tampilkan_tagihan()
+
+            elif sub == "3":
+                reminder.hapus_tagihan()
+
+            else:
+                print("Pilihan tidak valid di menu Tagihan!")
+
+
+        elif pilihan == "9":
+            print("\n=== Menu Anggaran Bulanan ===")
+            print("1. Lihat Status Anggaran")
+            print("2. Edit Anggaran")
+            print("3. Tambah Kategori Baru")
+            print("4. Hapus Kategori")
+            sub = input("Pilih opsi (1/2/3/4): ")
+
+            if sub == "1":
+                planner.tampilkan_status_anggaran()
+            elif sub == "2":
+                planner.edit_anggaran()
+            elif sub == "3":
+                planner.tambah_kategori()
+            elif sub == "4":
+                planner.hapus_kategori()
+            else:
+                print("Pilihan tidak valid di menu Anggaran!")
+
+
+        elif pilihan == "10":
+            laporan.tampilkan_ringkasan()
+
         else:
             print("Pilihan tidak valid, coba lagi!")
-
 
 if __name__ == "__main__":
     main()

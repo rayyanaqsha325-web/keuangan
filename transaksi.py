@@ -91,3 +91,6 @@ def menu():
     print("5. Keluar")
     print("6. Cari Transaksi Berdasarkan Keterangan")
     print("7. Lihat Transaksi Berdasarkan Jenis")
+    print("8. Lihat Pengingat Tagihan")
+    print("9. Lihat Anggaran Bulanan")
+    print("10. Lihat Laporan Bulanan")
