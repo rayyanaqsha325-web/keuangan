@@ -1,0 +1,14 @@
+{
+    "anggaran": {
+        "Makan": 900000,
+        "Transport": 500000,
+        "Hiburan": 400000,
+        "Belanja bulanan": 1000000
+    },
+    "pengeluaran": {
+        "Makan": 850000,
+        "Transport": 200000,
+        "Hiburan": 0,
+        "Belanja bulanan": 0
+    }
+}
