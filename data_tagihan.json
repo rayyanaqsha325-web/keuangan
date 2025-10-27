@@ -1,0 +1,12 @@
+[
+    {
+        "nama": "Internet",
+        "jatuh_tempo": "28-10-2025",
+        "jumlah": 200000
+    },
+    {
+        "nama": "Listrik ",
+        "jatuh_tempo": "29-10-2025",
+        "jumlah": 150000
+    }
+]
